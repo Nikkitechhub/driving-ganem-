@@ -1,0 +1,113 @@
+```css
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #222;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: white;
+}
+
+.game-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+.score {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+#game {
+    position: relative;
+    width: 300px;
+    height: 500px;
+    margin: auto;
+    overflow: hidden;
+    background: #555;
+    border-left: 8px solid white;
+    border-right: 8px solid white;
+}
+
+/* Road lines */
+#game::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 6px;
+    height: 100%;
+    background: repeating-linear-gradient(
+        to bottom,
+        white 0px,
+        white 40px,
+        transparent 40px,
+        transparent 80px
+    );
+    transform: translateX(-50%);
+}
+
+/* Player car */
+#player {
+    position: absolute;
+    width: 45px;
+    height: 80px;
+    background: red;
+    bottom: 20px;
+    left: 120px;
+    border-radius: 8px;
+    z-index: 2;
+}
+
+/* Car windows */
+#player::before,
+#enemy::before {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: #222;
+    left: 10px;
+    top: 10px;
+    border-radius: 4px;
+}
+
+/* Enemy car */
+#enemy {
+    position: absolute;
+    width: 45px;
+    height: 80px;
+    background: blue;
+    top: -100px;
+    left: 50px;
+    border-radius: 8px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #00c853;
+    color: white;
+}
+
+button:hover {
+    background: #00a844;
+}
+
+p {
+    margin-top: 10px;
+}
+```
